@@ -22,6 +22,9 @@
 
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
 
+  <!-- Preload hero for raskere LCP -->
+  <link rel="preload" as="image" href="assets/img/hero-photo.webp" fetchpriority="high">
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -83,8 +86,9 @@
     <!-- ============ HERO ============ -->
     <section class="hero" id="hjem">
       <div class="hero__media">
-        <!-- Bytt inn ekte foto: legg fil i assets/img/hero-photo.jpg -->
-        <img src="assets/img/hero-photo.jpg" alt="Moderne norsk bolig oppført av Førre Bygg"
+        <!-- Ekte foto: assets/img/hero-photo.webp (SVG som reserve) -->
+        <img src="assets/img/hero-photo.webp" alt="Moderne norsk bolig med trekledning og terrasse"
+             fetchpriority="high"
              onerror="this.onerror=null;this.src='assets/img/hero.svg'">
       </div>
       <div class="hero__overlay"></div>

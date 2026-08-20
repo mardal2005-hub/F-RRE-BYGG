@@ -49,7 +49,7 @@ endre HTML – bare legg en fil med riktig navn i mappen, så vises fotoet autom
 
 | Plassering | Filnavn (legg inn ekte foto) | Reserve vises til fotoet er på plass |
 |-----------|------------------------------|--------------------------------------|
-| Hero (øverst) | `assets/img/hero-photo.jpg` | `assets/img/hero.svg` |
+| Hero (øverst) | `assets/img/hero-photo.webp` (allerede lagt inn) | `assets/img/hero.svg` |
 | Om oss | `assets/img/about.jpg` | `assets/img/about.svg` |
 | Referanser | `assets/img/projects/bolig-1.jpg`, `oppussing-1.jpg`, `tilbygg-1.jpg`, `andre-1.jpg`, `bolig-2.jpg`, `oppussing-2.jpg` | tilhørende `ph-*.svg` |
 
