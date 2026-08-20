@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 900" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Tømrer i arbeid">
+  <defs>
+    <linearGradient id="ab-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1c496e"/>
+      <stop offset="1" stop-color="#0f2a41"/>
+    </linearGradient>
+    <linearGradient id="ab-wood" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d3b184"/>
+      <stop offset="1" stop-color="#a97f4f"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="900" fill="url(#ab-bg)"/>
+  <g opacity="0.9">
+    <rect x="120" y="180" width="560" height="30" rx="4" fill="url(#ab-wood)"/>
+    <rect x="120" y="250" width="560" height="30" rx="4" fill="url(#ab-wood)" opacity="0.85"/>
+    <rect x="120" y="320" width="560" height="30" rx="4" fill="url(#ab-wood)" opacity="0.7"/>
+  </g>
+  <g stroke="#f4ede1" stroke-width="10" stroke-linecap="round" opacity="0.85" fill="none">
+    <path d="M250 560 L470 560"/>
+    <path d="M250 560 L250 700"/>
+    <path d="M470 560 L470 700"/>
+    <path d="M360 470 L360 560"/>
+    <path d="M300 470 L420 470"/>
+  </g>
+  <circle cx="360" cy="470" r="16" fill="#c9a678"/>
+  <rect x="0" y="820" width="800" height="80" fill="#0e2740" opacity="0.5"/>
+</svg>

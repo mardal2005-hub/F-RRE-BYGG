@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Bolig">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1c496e"/>
+      <stop offset="1" stop-color="#0f2a41"/>
+    </linearGradient>
+    <linearGradient id="wd" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d3b184"/><stop offset="1" stop-color="#a97f4f"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <g stroke="#f4ede1" stroke-opacity="0.9" stroke-width="9" fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <polyline points="420,430 600,300 780,430"/>
+    <rect x="470" y="430" width="260" height="200"/>
+    <rect x="520" y="500" width="60" height="130"/>
+    <rect x="620" y="490" width="70" height="70" stroke="#c9a678"/>
+  </g>
+  <text x="1140" y="760" text-anchor="end" font-family="Inter, Arial, sans-serif" font-size="26" letter-spacing="3" fill="#f4ede1" fill-opacity="0.55">FØRRE BYGG</text>
+</svg>

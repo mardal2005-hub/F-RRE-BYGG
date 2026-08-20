@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Oppussing">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#255074"/>
+      <stop offset="1" stop-color="#12324f"/>
+    </linearGradient>
+    <linearGradient id="wd" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d3b184"/><stop offset="1" stop-color="#a97f4f"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <g stroke="#f4ede1" stroke-opacity="0.9" stroke-width="9" fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <rect x="430" y="300" width="340" height="240"/>
+    <line x1="430" y1="420" x2="770" y2="420"/>
+    <line x1="600" y1="300" x2="600" y2="540"/>
+    <path d="M500 620 l40 -40 l25 25 l-40 40 z" stroke="#c9a678"/>
+    <line x1="540" y1="580" x2="640" y2="480" stroke="#c9a678"/>
+  </g>
+  <text x="1140" y="760" text-anchor="end" font-family="Inter, Arial, sans-serif" font-size="26" letter-spacing="3" fill="#f4ede1" fill-opacity="0.55">FØRRE BYGG</text>
+</svg>
