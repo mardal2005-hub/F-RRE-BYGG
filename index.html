@@ -31,7 +31,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..500&family=Inter:wght@400;500;600;700&display=swap">
 
-  <link rel="stylesheet" href="css/styles.css?v=7">
+  <link rel="stylesheet" href="css/styles.css?v=9">
 
   <!-- Structured data: lokal byggmester -->
   <script type="application/ld+json">
@@ -70,16 +70,25 @@
     </div>
 
     <div class="masthead">
-      <div class="masthead__word">Førre&nbsp;Bygg</div>
-      <div class="masthead__sub">Bygg · Oppgradering · Utbedring</div>
-    </div>
+      <div class="container masthead__row">
+        <nav class="mast-nav mast-nav--left" aria-label="Meny venstre">
+          <a href="#tjenester">Tjenester</a>
+          <a href="#referanser">Referanser</a>
+          <a href="#prosess">Slik jobber vi</a>
+        </nav>
 
-    <div class="navbar" id="navbar">
-      <div class="container">
-        <a href="#hjem" class="navbar__brand" aria-label="Førre Bygg – til toppen">
-          <span class="navbar__mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></span>
-          Førre Bygg
+        <a href="#hjem" class="masthead__brand" aria-label="Førre Bygg – til toppen">
+          <span class="masthead__word">Førre&nbsp;Bygg</span>
+          <span class="masthead__sub">Bygg · Oppgradering · Utbedring</span>
         </a>
+
+        <nav class="mast-nav mast-nav--right" aria-label="Meny høyre">
+          <a href="#om-oss">Om oss</a>
+          <a href="#kontakt">Kontakt</a>
+          <a href="#kontakt" class="btn btn--ink mast-cta">Ta kontakt</a>
+        </nav>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Åpne meny" aria-expanded="false" aria-controls="primaryNav"><span></span></button>
         <nav class="nav" id="primaryNav" aria-label="Hovedmeny">
           <a href="#tjenester">Tjenester</a>
           <a href="#referanser">Referanser</a>
@@ -88,7 +97,6 @@
           <a href="#kontakt">Kontakt</a>
           <a href="#kontakt" class="btn btn--ink nav__cta">Ta kontakt</a>
         </nav>
-        <button class="nav-toggle" id="navToggle" aria-label="Åpne meny" aria-expanded="false" aria-controls="primaryNav"><span></span></button>
       </div>
     </div>
   </header>
