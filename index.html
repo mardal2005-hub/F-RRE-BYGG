@@ -31,7 +31,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..500&family=Inter:wght@400;500;600;700&display=swap">
 
-  <link rel="stylesheet" href="css/styles.css?v=4">
+  <link rel="stylesheet" href="css/styles.css?v=5">
 
   <!-- Structured data: lokal byggmester -->
   <script type="application/ld+json">
@@ -95,31 +95,36 @@
 
   <main id="main">
 
-    <!-- ============ HERO ============ -->
+    <!-- ============ HERO (delt: tekst venstre, video høyre) ============ -->
     <section class="hero">
+      <div class="hero__text">
+        <div class="hero__text-inner">
+          <p class="hero__kick reveal is-in">Prosjekter på Haugalandet</p>
+          <h1 class="reveal is-in">Vi bygger og oppgraderer <em>med kvalitet</em></h1>
+          <p class="hero__lead reveal is-in" data-delay="1">Førre Bygg har lang erfaring med oppføring, oppgradering og utbedring av bolig, hytte og garasje – tømrerarbeid på time og fastpris.</p>
+          <div class="hero__cta reveal is-in" data-delay="2">
+            <a href="#kontakt" class="btn btn--sand btn--lg">Få et uforpliktende tilbud</a>
+            <a href="#referanser" class="btn btn--ghost btn--lg">Se våre referanser</a>
+          </div>
+        </div>
+      </div>
       <div class="hero__media">
         <video class="hero__video" autoplay muted loop playsinline preload="auto"
                poster="assets/img/hero-poster.jpg" aria-hidden="true">
           <source src="assets/img/video/prosjekt.mp4" type="video/mp4">
         </video>
       </div>
-      <div class="hero__scrim"></div>
-      <div class="container hero__inner">
-        <p class="hero__kick reveal is-in">Prosjekter på Haugalandet</p>
-        <h1 class="reveal is-in">Vi bygger og oppgraderer <em>med kvalitet</em></h1>
-        <p class="hero__lead reveal is-in" data-delay="1">Førre Bygg har lang erfaring med oppføring, oppgradering og utbedring av bolig, hytte og garasje – tømrerarbeid på time og fastpris.</p>
-        <div class="hero__cta reveal is-in" data-delay="2">
-          <a href="#kontakt" class="btn btn--sand btn--lg">Få et uforpliktende tilbud</a>
-          <a href="#referanser" class="btn btn--light btn--lg">Se våre referanser</a>
-        </div>
-        <div class="hero__facts reveal is-in" data-delay="3">
+    </section>
+    <div class="hero__facts-band">
+      <div class="container">
+        <div class="hero__facts">
           <div class="hero__fact"><strong>Bolig</strong><span>Nybygg</span></div>
           <div class="hero__fact"><strong>Hytte</strong><span>Fritidsbolig</span></div>
           <div class="hero__fact"><strong>Garasje</strong><span>Tilbygg</span></div>
           <div class="hero__fact"><strong>Oppussing</strong><span>Utbedring</span></div>
         </div>
       </div>
-    </section>
+    </div>
 
     <!-- ============ INTRO ============ -->
     <section class="section">
