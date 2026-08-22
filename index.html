@@ -23,15 +23,15 @@
 
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
 
-  <!-- Preload hero for raskere LCP -->
-  <link rel="preload" as="image" href="assets/img/hero-photo.webp" fetchpriority="high">
+  <!-- Preload hero-poster for raskere LCP (videoen lastes etter) -->
+  <link rel="preload" as="image" href="assets/img/hero-poster.jpg" fetchpriority="high">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..500&family=Inter:wght@400;500;600;700&display=swap">
 
-  <link rel="stylesheet" href="css/styles.css?v=2">
+  <link rel="stylesheet" href="css/styles.css?v=3">
 
   <!-- Structured data: lokal byggmester -->
   <script type="application/ld+json">
@@ -98,8 +98,10 @@
     <!-- ============ HERO ============ -->
     <section class="hero">
       <div class="hero__media">
-        <img src="assets/img/hero-photo.webp" alt="Moderne enebolig med trekledning og terrasse oppført på Haugalandet"
-             fetchpriority="high" onerror="this.onerror=null;this.src='assets/img/hero.svg'">
+        <video class="hero__video" autoplay muted loop playsinline preload="auto"
+               poster="assets/img/hero-poster.jpg" aria-hidden="true">
+          <source src="assets/img/video/prosjekt.mp4" type="video/mp4">
+        </video>
       </div>
       <div class="hero__scrim"></div>
       <div class="container hero__inner">
@@ -191,7 +193,7 @@
         <div class="section-head reveal">
           <span class="eyebrow">Referanser</span>
           <h2>Utvalgte prosjekter</h2>
-          <p>Et utvalg av arbeidet vårt innen bolig, oppussing og tilbygg. Bildene her er plassholdere – ekte prosjektbilder byttes enkelt inn i samme oppsett.</p>
+          <p>Et utvalg av arbeidet vårt innen bolig, oppussing og tilbygg – fra nybygg og fasade til innvendig oppgradering.</p>
         </div>
 
         <div class="gallery-filters reveal" role="group" aria-label="Filtrer prosjekter">
@@ -204,34 +206,34 @@
 
         <div class="gallery" id="gallery">
           <article class="project project--wide reveal" data-cat="bolig">
-            <div class="project__img"><img src="assets/img/projects/bolig-1.jpg" alt="Enebolig oppført av Førre Bygg i Førresfjorden" loading="lazy" onerror="this.onerror=null;this.src='assets/img/ph-bolig.svg'"></div>
+            <div class="project__img"><img src="assets/img/projects/bolig-1.jpg" alt="Moderne enebolig med mørk kledning oppført av Førre Bygg" loading="lazy" onerror="this.onerror=null;this.src='assets/img/ph-bolig.svg'"></div>
             <div class="project__scrim"></div>
-            <div class="project__body"><span class="project__tag">Bolig</span><h3>Enebolig i Førresfjorden</h3><p>Oppføring av moderne enebolig med solide materialer og god planløsning.</p></div>
+            <div class="project__body"><span class="project__tag">Bolig</span><h3>Moderne enebolig</h3><p>Oppføring av enebolig med mørk kledning og store vindusflater.</p></div>
           </article>
           <article class="project project--tall reveal" data-cat="oppussing" data-delay="1">
-            <div class="project__img"><img src="assets/img/projects/oppussing-1.jpg" alt="Innvendig oppussing og modernisering" loading="lazy" onerror="this.onerror=null;this.src='assets/img/ph-oppussing.svg'"></div>
+            <div class="project__img"><img src="assets/img/projects/oppussing-1.jpg" alt="Innvendig oppussing med buede panoramavinduer" loading="lazy" onerror="this.onerror=null;this.src='assets/img/ph-oppussing.svg'"></div>
             <div class="project__scrim"></div>
-            <div class="project__body"><span class="project__tag">Oppussing</span><h3>Totaloppussing av bolig</h3><p>Gjennomgående oppgradering av rom og overflater med varig resultat.</p></div>
+            <div class="project__body"><span class="project__tag">Oppussing</span><h3>Oppussing av stue</h3><p>Modernisering av rom med nye vindusflater og overflater.</p></div>
           </article>
           <article class="project reveal" data-cat="tilbygg">
-            <div class="project__img"><img src="assets/img/projects/tilbygg-1.jpg" alt="Tilbygg med terrasse" loading="lazy" onerror="this.onerror=null;this.src='assets/img/ph-tilbygg.svg'"></div>
+            <div class="project__img"><img src="assets/img/projects/tilbygg-1.jpg" alt="Fasadearbeid med ny kledning på stillas" loading="lazy" onerror="this.onerror=null;this.src='assets/img/ph-tilbygg.svg'"></div>
             <div class="project__scrim"></div>
-            <div class="project__body"><span class="project__tag">Tilbygg</span><h3>Tilbygg med terrasse</h3><p>Utvidelse som gir mer plass og henger naturlig sammen med boligen.</p></div>
+            <div class="project__body"><span class="project__tag">Tilbygg</span><h3>Fasade og tilbygg</h3><p>Utvendig arbeid med ny kledning og vindtett – bygget for norske forhold.</p></div>
           </article>
           <article class="project reveal" data-cat="bolig" data-delay="1">
-            <div class="project__img"><img src="assets/img/projects/bolig-2.jpg" alt="Bolig under oppføring" loading="lazy" onerror="this.onerror=null;this.src='assets/img/ph-bolig.svg'"></div>
+            <div class="project__img"><img src="assets/img/projects/bolig-2.jpg" alt="Enebolig med garasje og terrasse" loading="lazy" onerror="this.onerror=null;this.src='assets/img/ph-bolig.svg'"></div>
             <div class="project__scrim"></div>
-            <div class="project__body"><span class="project__tag">Bolig</span><h3>Oppføring av bolig</h3><p>Nybygg planlagt og gjennomført fra grunnmur til ferdig hus.</p></div>
+            <div class="project__body"><span class="project__tag">Bolig</span><h3>Enebolig med garasje</h3><p>Oppgradering av enebolig med garasje og terrasse.</p></div>
           </article>
           <article class="project reveal" data-cat="andre">
-            <div class="project__img"><img src="assets/img/projects/andre-1.jpg" alt="Frittstående garasje" loading="lazy" onerror="this.onerror=null;this.src='assets/img/ph-andre.svg'"></div>
+            <div class="project__img"><img src="assets/img/projects/andre-1.jpg" alt="Håndverkere fra Førre Bygg på takkonstruksjon" loading="lazy" onerror="this.onerror=null;this.src='assets/img/ph-andre.svg'"></div>
             <div class="project__scrim"></div>
-            <div class="project__body"><span class="project__tag">Andre prosjekter</span><h3>Garasje og uthus</h3><p>Frittstående garasje tilpasset eiendommen og norske forhold.</p></div>
+            <div class="project__body"><span class="project__tag">Andre prosjekter</span><h3>Takkonstruksjon og reisverk</h3><p>Solid håndverk i hvert ledd – fra reisverk til ferdig tak.</p></div>
           </article>
           <article class="project project--wide reveal" data-cat="oppussing" data-delay="1">
-            <div class="project__img"><img src="assets/img/projects/oppussing-2.jpg" alt="Oppgradering av hytte" loading="lazy" onerror="this.onerror=null;this.src='assets/img/ph-oppussing.svg'"></div>
+            <div class="project__img"><img src="assets/img/projects/oppussing-2.jpg" alt="Oppgradering av hytte med ny kledning" loading="lazy" onerror="this.onerror=null;this.src='assets/img/ph-oppussing.svg'"></div>
             <div class="project__scrim"></div>
-            <div class="project__body"><span class="project__tag">Oppussing</span><h3>Oppgradering av hytte</h3><p>Utbedring og modernisering av fritidsbolig med varige løsninger.</p></div>
+            <div class="project__body"><span class="project__tag">Oppussing</span><h3>Oppgradering av hytte</h3><p>Utbedring og ny kledning på fritidsbolig med varige løsninger.</p></div>
           </article>
         </div>
       </div>
