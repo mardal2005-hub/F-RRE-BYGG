@@ -86,7 +86,7 @@ h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.04;letter-spa
 .topline .container{display:flex;justify-content:space-between;align-items:center;height:38px;gap:16px}
 .topline span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
-.masthead{max-width:var(--container);margin-inline:auto;text-align:left;padding:26px var(--pad) 22px}
+.masthead{text-align:center;padding:26px 0 22px}
 .masthead__word{
   font-family:var(--serif);font-weight:500;letter-spacing:.01em;
   font-size:clamp(38px,8vw,86px);line-height:.92;
@@ -131,6 +131,8 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
   linear-gradient(180deg,rgba(15,12,8,.34) 0%,rgba(15,12,8,0) 26%,rgba(15,12,8,.12) 55%,rgba(15,12,8,.82) 100%),
   linear-gradient(90deg,rgba(15,12,8,.55),rgba(15,12,8,0) 62%);}
 .hero__inner{position:relative;z-index:2;width:100%;padding-block:clamp(40px,7vw,84px)}
+/* Forankre hero-innholdet til venstre (ikke sentrert kolonne) */
+.hero .container{margin-inline:0 auto;padding-left:clamp(24px,5vw,72px)}
 .hero__kick{color:#D6DEE6;font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(16px,2vw,21px);letter-spacing:.01em;margin-bottom:20px}
 .hero__kick::before{content:"";display:inline-block;width:34px;height:1px;background:#D6DEE6;vertical-align:middle;margin-right:14px;opacity:.7}
 .hero h1{color:#fff;font-size:clamp(44px,7.2vw,104px);font-weight:400;max-width:15ch;text-shadow:0 4px 44px rgba(0,0,0,.28)}
