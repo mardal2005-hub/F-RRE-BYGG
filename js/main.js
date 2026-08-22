@@ -28,13 +28,12 @@
     });
   }
 
-  /* ---- Sticky navbar: kompakt tilstand ved scroll ---- */
-  var navbar = doc.getElementById('navbar');
-  if (navbar) {
+  /* ---- Sticky header: skygge når man scroller ---- */
+  var header = doc.querySelector('.site-header');
+  if (header) {
     var mark = function () {
-      navbar.classList.toggle('is-stuck', navbar.getBoundingClientRect().top <= 1);
+      header.classList.toggle('is-scrolled', window.scrollY > 4);
     };
-    // følg med når navbar treffer toppen
     window.addEventListener('scroll', mark, { passive: true });
     mark();
   }

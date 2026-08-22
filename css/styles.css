@@ -79,6 +79,8 @@ h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.04;letter-spa
 .btn--block{width:100%}
 
 /* ---------- Header ---------- */
+.site-header{position:sticky;top:0;z-index:100;background:var(--paper);transition:box-shadow .25s var(--ease)}
+.site-header.is-scrolled{box-shadow:0 10px 34px -20px rgba(23,20,15,.55)}
 .topline{
   border-bottom:1px solid var(--line-soft);
   font:600 10.5px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--muted-2);
