@@ -1,29 +1,33 @@
-# Førre Bygg – nettside (demo)
+# Førre Bygg – nettside
 
-Moderne, profesjonell demo-nettside for byggfirmaet **Førre Bygg** – oppføring,
-oppgradering og utbedring av bolig, hytte og garasje.
+Moderne, konverteringsrettet nettside for **Førre Bygg** – byggmester i Tysvær på
+Haugalandet. Oppføring, oppgradering og utbedring av bolig, hytte og garasje.
 
-Bygget som en statisk side (HTML, CSS og litt JavaScript) uten rammeverk eller
-byggeprosess. Det gir rask lastetid og gjør den enkel å hoste hvor som helst.
+Bygget som en rask, statisk side (HTML, CSS og litt JavaScript) uten rammeverk eller
+byggeprosess. Enkel å hoste hvor som helst, med automatisk HTTPS på GitHub Pages,
+Netlify eller lignende.
 
-> **Demo-merknad:** Innholdet bygger på informasjon som kan bekreftes offentlig
-> (foretaksnavn, org.nr og adresse fra foretaksregisteret) samt tjenester og
-> tekst avtalt for demoen. Telefon og e-post er **plassholdere** og må byttes ut
-> med reelle opplysninger før lansering.
+## Designretning
+
+Redaksjonell «premium»-stil: dempet varm palett (papirhvit · nær-sort · messing/sand),
+elegant serif (Fraunces) kombinert med ren sans (Inter), stor fotografi, mye luft og
+diskrete animasjoner ved scrolling. Ingen unødvendige effekter.
 
 ## Struktur
 
 ```
 .
-├── index.html            # Hele forsiden (hero, tjenester, referanser, om oss, kontakt, CTA, footer)
-├── css/styles.css        # All styling (palett: hvit/lys, mørk blå, varm sand/tre)
-├── js/main.js            # Meny, galleri-filter, scroll-animasjon og skjemahåndtering
-├── assets/img/           # Logo/favicon, hero, om-oss og plassholderbilder (SVG)
-│   └── projects/         # Her legges ekte prosjektbilder (.jpg)
-├── robots.txt            # SEO
-├── sitemap.xml           # SEO
-└── .nojekyll             # Sikrer at alle filer serveres på GitHub Pages
+├── index.html            # Hele forsiden
+├── css/styles.css        # Designsystem og all styling
+├── js/main.js            # Meny, sticky nav, scroll-reveal, galleri-filter, skjema
+├── assets/img/           # Hero-foto, favicon, plassholdere for prosjekt-/om-bilder
+├── personvern.html       # Personvern
+├── robots.txt · sitemap.xml
+└── .nojekyll
 ```
+
+Seksjoner: Hero → Om (intro) → Tjenester → Referanser (galleri m/ filter) →
+Slik jobber vi → Om oss → CTA-bånd → Kontakt → Footer.
 
 ## Kjøre lokalt
 
@@ -32,49 +36,32 @@ python3 -m http.server 8000
 # åpne http://localhost:8000
 ```
 
-## Innhold som må fylles inn før lansering
+## Bytte inn ekte innhold
 
 | Hva | Hvor | Merket med |
 |-----|------|-----------|
-| **Telefon** | `index.html` (kontakt + footer), `js/main.js` | `+47 XXX XX XXX` / `tel:+47XXXXXXXX`, attributt `data-placeholder` |
-| **E-post** | `index.html` (kontakt + footer), `js/main.js` | `post@forrebygg.no`, attributt `data-placeholder` |
-| **Skjematjeneste** | `index.html` (`<form action=...>`) | `formspree.io/f/your-form-id` |
+| **Hero-foto** | `assets/img/hero-photo.webp` (allerede lagt inn) | fallback: `assets/img/hero.svg` |
+| **Prosjektbilder** | legg filer i `assets/img/projects/` med navnene i `index.html` (`bolig-1.jpg`, `oppussing-1.jpg`, `tilbygg-1.jpg`, `andre-1.jpg`, `bolig-2.jpg`, `oppussing-2.jpg`) | fallback: `assets/img/ph-*.svg` |
+| **Om oss-bilde** | `assets/img/about.jpg` | fallback: `assets/img/about.svg` |
+| **Telefon / e-post** | søk etter `data-placeholder` i `index.html` | `+47 XXX XX XXX` / `post@forrebygg.no` |
 
-Søk i koden etter `data-placeholder` og `your-form-id` for å finne dem raskt.
+Alle bilder har `onerror`-fallback til en plassholder, så siden ser aldri «tom» ut før
+ekte foto er på plass. Prosjektbildene byttes inn uten å endre oppsettet.
 
-## Bytte inn ekte bilder
+### Kontaktskjema
 
-Bildene i galleriet og hero er tydelige plassholdere (SVG). De byttes inn uten å
-endre HTML – bare legg en fil med riktig navn i mappen, så vises fotoet automatisk:
+Skjemaet fungerer ut av boksen: uten en skjematjeneste åpner det kundens e-postprogram
+med en ferdig utfylt melding. For å motta forespørsler automatisk, opprett et skjema hos
+[Formspree](https://formspree.io) og bytt ut `your-form-id` i `action` på `#contactForm`.
 
-| Plassering | Filnavn (legg inn ekte foto) | Reserve vises til fotoet er på plass |
-|-----------|------------------------------|--------------------------------------|
-| Hero (øverst) | `assets/img/hero-photo.webp` (allerede lagt inn) | `assets/img/hero.svg` |
-| Om oss | `assets/img/about.jpg` | `assets/img/about.svg` |
-| Referanser | `assets/img/projects/bolig-1.jpg`, `oppussing-1.jpg`, `tilbygg-1.jpg`, `andre-1.jpg`, `bolig-2.jpg`, `oppussing-2.jpg` | tilhørende `ph-*.svg` |
+## Bekreftet informasjon
 
-Hvert `<img>` har en `onerror`-reserve, så siden ser aldri «tom» ut. Anbefalt
-bildestørrelse: liggende, ca. 1600×1000 px eller større. Vil du legge til flere
-prosjekter, kopiér et `<article class="project ...">`-element og sett `data-cat`
-til `bolig`, `oppussing`, `tilbygg` eller `andre`.
+Adresse (Lyngvegen 7C, 5563 Førresfjorden) og org.nr (929 226 208) er hentet fra
+offentlig foretaksregister. Telefon og e-post er plassholdere til de bekreftes.
 
-## Kontaktskjema
+## SEO / lokal synlighet
 
-Skjemaet fungerer ut av boksen: uten en skjematjeneste åpner det kundens
-e-postprogram med en ferdig utfylt melding. For å motta forespørsler automatisk,
-opprett et skjema hos [Formspree](https://formspree.io) og bytt ut
-`action="https://formspree.io/f/your-form-id"` i `index.html` med din egen URL.
-JavaScript sender da skjemaet i bakgrunnen og viser en takkemelding.
-
-## Design
-
-- Palett: hvit/lys bakgrunn, mørk blå (`#0e2740` / `#12324f`) og varm sand/tre (`#c9a678`)
-- Typografi: **Fraunces** (overskrifter) og **Inter** (brødtekst/UI)
-- Diskrete scroll-animasjoner, med hensyn til `prefers-reduced-motion`
-- Responsivt for mobil, tablet og desktop
-- SEO: meta-tagger, Open Graph, strukturert data (GeneralContractor), sitemap og robots.txt
-
-## Publisere (med HTTPS)
-
-Siden er statisk og kan publiseres gratis med automatisk HTTPS via **GitHub Pages**,
-**Netlify**, **Vercel** eller **Cloudflare Pages**.
+- Tittel, meta-beskrivelse og nøkkelord rettet mot Tysvær/Haugalandet
+- Open Graph for deling
+- Strukturert data (`GeneralContractor`) med adresse, `areaServed` og fagområder
+- `sitemap.xml`, `robots.txt`, semantisk HTML og god ytelse (preload av hero, `lazy` på bilder)
