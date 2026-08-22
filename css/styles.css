@@ -128,8 +128,8 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
 .hero__media img{animation:heroZoom 14s var(--ease) both}
 @keyframes heroZoom{from{transform:scale(1.08)}to{transform:scale(1)}}
 .hero__scrim{position:absolute;inset:0;background:
-  linear-gradient(180deg,rgba(15,12,8,.34) 0%,rgba(15,12,8,0) 26%,rgba(15,12,8,.12) 55%,rgba(15,12,8,.82) 100%),
-  linear-gradient(90deg,rgba(15,12,8,.55),rgba(15,12,8,0) 62%);}
+  linear-gradient(90deg,rgba(15,17,20,.94) 0%,rgba(15,17,20,.8) 26%,rgba(15,17,20,.42) 50%,rgba(15,17,20,.12) 74%,rgba(15,17,20,.05) 100%),
+  linear-gradient(180deg,rgba(15,17,20,.5) 0%,rgba(15,17,20,.12) 38%,rgba(15,17,20,.66) 100%);}
 .hero__inner{position:relative;z-index:2;width:100%;padding-block:clamp(40px,7vw,84px)}
 /* Forankre hero-innholdet til venstre (ikke sentrert kolonne) */
 .hero .container{margin-inline:0 auto;padding-left:clamp(24px,5vw,72px)}
