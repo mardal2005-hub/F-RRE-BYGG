@@ -134,31 +134,30 @@ body.nav-open .nav-toggle span::before{transform:translateY(6px) rotate(45deg)}
 body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
 
 /* ---------- Hero cover ---------- */
-.hero{position:relative;min-height:min(88vh,860px);display:flex;align-items:flex-end;overflow:hidden;background:var(--ink)}
+.hero{position:relative;min-height:min(82vh,760px);display:flex;align-items:center;overflow:hidden;background:var(--ink)}
 .hero__media{position:absolute;inset:0;background:#171410 center/cover no-repeat}
 .hero__media img,.hero__media video{width:100%;height:100%;object-fit:cover;display:block}
 .hero__media img{animation:heroZoom 14s var(--ease) both}
 @keyframes heroZoom{from{transform:scale(1.08)}to{transform:scale(1)}}
 .hero__scrim{position:absolute;inset:0;background:
-  linear-gradient(90deg,rgba(15,17,20,.94) 0%,rgba(15,17,20,.8) 26%,rgba(15,17,20,.42) 50%,rgba(15,17,20,.12) 74%,rgba(15,17,20,.05) 100%),
-  linear-gradient(180deg,rgba(15,17,20,.5) 0%,rgba(15,17,20,.12) 38%,rgba(15,17,20,.66) 100%);}
+  linear-gradient(90deg,rgba(15,17,20,.72) 0%,rgba(15,17,20,.44) 32%,rgba(15,17,20,.12) 62%,rgba(15,17,20,0) 100%),
+  linear-gradient(180deg,rgba(15,17,20,.3) 0%,rgba(15,17,20,0) 42%,rgba(15,17,20,.5) 100%);}
 .hero__inner{position:relative;z-index:2;width:100%;padding-block:clamp(40px,7vw,84px)}
 /* Forankre hero-innholdet til venstre (ikke sentrert kolonne) */
 .hero .container{margin-inline:0 auto;padding-left:clamp(24px,5vw,72px)}
-.hero__kick{color:#D6DEE6;font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(16px,2vw,21px);letter-spacing:.01em;margin-bottom:20px}
-.hero__kick::before{content:"";display:inline-block;width:34px;height:1px;background:#D6DEE6;vertical-align:middle;margin-right:14px;opacity:.7}
-.hero h1{color:#fff;font-size:clamp(44px,7.2vw,104px);font-weight:400;max-width:15ch;text-shadow:0 4px 44px rgba(0,0,0,.28)}
-.hero h1 em{font-style:italic;color:#D6DEE6}
-.hero__lead{color:rgba(255,255,255,.9);font-size:clamp(16px,1.6vw,20px);max-width:52ch;margin-top:24px}
-.hero__cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
-.hero__facts{
-  display:grid;grid-template-columns:repeat(4,1fr);margin-top:clamp(38px,6vw,64px);
-  border-top:1px solid rgba(255,255,255,.28);
-}
-.hero__fact{padding:20px 26px 4px 0;border-right:1px solid rgba(255,255,255,.2)}
+/* CTA-boks i hero */
+.hero__card{background:var(--paper);max-width:430px;padding:clamp(28px,3vw,42px);border-top:3px solid var(--sand);box-shadow:0 34px 80px -34px rgba(0,0,0,.7)}
+.hero__card-eyebrow{display:inline-block;font:600 11px var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--sand-deep);margin-bottom:14px}
+.hero__card h2{font-size:clamp(28px,3.2vw,40px);color:var(--ink);line-height:1.04}
+.hero__card p{color:var(--muted);font-size:16px;margin:14px 0 26px;max-width:34ch}
+
+/* Fagområde-stripe under hero */
+.hero__facts-band{background:var(--paper-2);border-bottom:1px solid var(--line)}
+.hero__facts{display:grid;grid-template-columns:repeat(4,1fr)}
+.hero__fact{padding:22px 26px;border-right:1px solid var(--line)}
 .hero__fact:last-child{border-right:0}
-.hero__fact strong{display:block;font-family:var(--serif);font-weight:500;font-size:clamp(18px,2vw,22px);color:#fff}
-.hero__fact span{font:600 11px var(--sans);letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.72)}
+.hero__fact strong{display:block;font-family:var(--serif);font-weight:500;font-size:clamp(18px,2vw,22px);color:var(--ink)}
+.hero__fact span{font:600 11px var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--muted-2)}
 
 /* ---------- Sections ---------- */
 .section{padding-block:var(--sec)}
@@ -353,7 +352,8 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
   .navbar__brand{opacity:1;transform:none;pointer-events:auto}
   .hero__facts{grid-template-columns:1fr 1fr}
   .hero__fact:nth-child(2){border-right:0}
-  .hero__fact{border-bottom:1px solid rgba(255,255,255,.16)}
+  .hero__fact{border-bottom:1px solid var(--line)}
+  .hero__fact:nth-last-child(-n+2){border-bottom:0}
 }
 @media(max-width:600px){
   body{font-size:16px}
