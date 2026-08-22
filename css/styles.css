@@ -81,10 +81,18 @@ h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.04;letter-spa
 /* ---------- Header ---------- */
 .site-header{position:sticky;top:0;z-index:100;background:var(--paper);transition:box-shadow .25s var(--ease)}
 .site-header.is-scrolled{box-shadow:0 10px 34px -20px rgba(23,20,15,.55)}
+/* Kompakt tilstand ved scroll: skjul topplinje, mindre logo/padding */
+.masthead{transition:padding .3s var(--ease)}
+.masthead__word{transition:font-size .3s var(--ease)}
+.site-header.is-scrolled .topline{opacity:0;pointer-events:none;border-bottom-color:transparent}
+.site-header.is-scrolled .topline .container{height:0}
+.site-header.is-scrolled .masthead{padding-top:12px;padding-bottom:12px}
+.site-header.is-scrolled .masthead__word{font-size:clamp(24px,3vw,42px)}
 .topline{
-  border-bottom:1px solid var(--line-soft);
+  border-bottom:1px solid var(--line-soft);overflow:hidden;transition:opacity .3s var(--ease);
   font:600 10.5px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--muted-2);
 }
+.topline .container{transition:height .3s var(--ease)}
 .topline .container{display:flex;justify-content:space-between;align-items:center;height:38px;gap:16px}
 .topline span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
