@@ -190,20 +190,22 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
 /* ---------- Tjenester (editorial grid) ---------- */
 .svc-grid{
   margin-top:clamp(40px,5vw,64px);
-  display:grid;grid-template-columns:repeat(3,1fr);
-  border-top:1px solid var(--line);border-left:1px solid var(--line);
+  display:grid;grid-template-columns:repeat(3,1fr);gap:22px;
 }
 .svc{
-  padding:clamp(28px,3vw,40px);border-right:1px solid var(--line);border-bottom:1px solid var(--line);
-  background:transparent;transition:background .3s var(--ease);position:relative;min-height:238px;display:flex;flex-direction:column;
+  position:relative;overflow:hidden;background:#fff;border:1px solid var(--line);
+  padding:clamp(30px,2.6vw,40px);display:flex;flex-direction:column;
+  transition:transform .32s var(--ease),box-shadow .32s var(--ease),border-color .32s var(--ease);
 }
-.svc:hover{background:var(--paper)}
-.section--tint .svc:hover{background:#fff}
-.svc__num{font:600 12px var(--sans);letter-spacing:.16em;color:var(--sand-deep)}
-.svc__icon{width:46px;height:46px;margin:18px 0 20px;color:var(--ink);display:grid;place-items:center}
-.svc__icon svg{width:34px;height:34px;stroke-width:1.4}
-.svc h3{font-size:25px;margin-bottom:10px}
-.svc p{color:var(--muted);font-size:15.5px;margin-top:auto}
+.svc::before{content:"";position:absolute;left:0;top:0;height:3px;width:100%;background:var(--sand);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
+.svc:hover{transform:translateY(-6px);box-shadow:0 34px 66px -34px rgba(23,20,15,.42);border-color:transparent}
+.svc:hover::before{transform:scaleX(1)}
+.svc__num{position:absolute;right:24px;top:18px;font-family:var(--serif);font-weight:500;font-size:38px;line-height:1;color:var(--paper-3);transition:color .32s var(--ease)}
+.svc:hover .svc__num{color:var(--sand)}
+.svc__icon{width:58px;height:58px;margin:0 0 24px;display:grid;place-items:center;background:var(--sand-tint);color:var(--sand-deep)}
+.svc__icon svg{width:30px;height:30px;stroke-width:1.6}
+.svc h3{font-size:24px;margin-bottom:11px}
+.svc p{color:var(--muted);font-size:15.5px}
 
 /* ---------- Referanser (galleri) ---------- */
 .gallery-filters{display:flex;flex-wrap:wrap;gap:10px;margin-top:clamp(32px,4vw,48px)}
