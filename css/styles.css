@@ -433,7 +433,20 @@ a.svc{text-decoration:none;color:inherit}
   .cta-band__inner{flex-direction:column;align-items:flex-start}
 }
 
-@media(prefers-reduced-motion:reduce){
+/* ---------- Kun PC: forbedre opplevd bildekvalitet ---------- */
+/* Bildene er hardt komprimert; på store skjermer synes det.
+   Diskret klarhet/metning + begrens oppskalering av fullbredde-bilder. */
+@media(min-width:861px){
+  .project__img img,
+  .about__media img,
+  .subhero__media img,
+  .hero__media img,
+  .side-card img{
+    filter:saturate(1.08) contrast(1.035);
+  }
+  /* Litt lavere banner så bildet zoomes mindre opp */
+  .subhero{min-height:clamp(300px,38vh,420px)}
+}
   *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
   .reveal{opacity:1;transform:none}
   /* Ikke spill av hero-video ved redusert bevegelse – vis poster (deres eget foto) */
