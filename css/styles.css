@@ -200,8 +200,7 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
 .svc::before{content:"";position:absolute;left:0;top:0;height:3px;width:100%;background:var(--sand);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
 .svc:hover{transform:translateY(-6px);box-shadow:0 34px 66px -34px rgba(23,20,15,.42);border-color:transparent}
 .svc:hover::before{transform:scaleX(1)}
-.svc__num{position:absolute;right:24px;top:18px;font-family:var(--serif);font-weight:500;font-size:38px;line-height:1;color:var(--paper-3);transition:color .32s var(--ease)}
-.svc:hover .svc__num{color:var(--sand)}
+.svc__num{display:none}
 .svc__icon{width:58px;height:58px;margin:0 0 24px;display:grid;place-items:center;background:var(--sand-tint);color:var(--sand-deep)}
 .svc__icon svg{width:30px;height:30px;stroke-width:1.6}
 .svc h3{font-size:24px;margin-bottom:11px}
