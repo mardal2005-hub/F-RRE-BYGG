@@ -42,7 +42,6 @@
     "description": "Byggmester i Tysvær på Haugalandet. Oppføring, oppgradering og utbedring av bolig, hytte og garasje. Tømrerarbeid på time og fastpris.",
     "url": "https://forrebygg.no/",
     "image": "https://forrebygg.no/assets/img/og-image.svg",
-    "telephone": "+47XXXXXXXX",
     "email": "post@forrebygg.no",
     "address": {
       "@type": "PostalAddress",
@@ -219,12 +218,7 @@
         </div>
 
         <div class="gallery" id="gallery">
-          <article class="project project--wide reveal" data-cat="bolig">
-            <div class="project__img"><img src="assets/img/projects/bolig-1.jpg" alt="Moderne enebolig med mørk kledning oppført av Førre Bygg" loading="lazy" onerror="this.onerror=null;this.src='assets/img/ph-bolig.svg'"></div>
-            <div class="project__scrim"></div>
-            <div class="project__body"><span class="project__tag">Bolig</span><h3>Moderne enebolig</h3><p>Oppføring av enebolig med mørk kledning og store vindusflater.</p></div>
-          </article>
-          <article class="project project--tall reveal" data-cat="oppussing" data-delay="1">
+          <article class="project project--tall reveal" data-cat="oppussing">
             <div class="project__img"><img src="assets/img/projects/oppussing-1.jpg" alt="Innvendig oppussing med buede panoramavinduer" loading="lazy" onerror="this.onerror=null;this.src='assets/img/ph-oppussing.svg'"></div>
             <div class="project__scrim"></div>
             <div class="project__body"><span class="project__tag">Oppussing</span><h3>Oppussing av stue</h3><p>Modernisering av rom med nye vindusflater og overflater.</p></div>
@@ -344,7 +338,7 @@
             <ul class="info-list">
               <li>
                 <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L7.9 9.8a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg></span>
-                <div><span class="k">Telefon</span><a href="tel:+47XXXXXXXX" data-placeholder>+47 XXX XX XXX</a></div>
+                <div><span class="k">Telefon</span><p data-placeholder>+47 XXX XX XXX</p></div>
               </li>
               <li>
                 <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span>
@@ -359,7 +353,9 @@
                 <div><span class="k">Org.nr</span><p>929 226 208 · Førre Bygg AS</p></div>
               </li>
             </ul>
-            <p class="placeholder-hint">Telefon og e-post er plassholdere i denne demoen (<code>+47 XXX XX XXX</code> / <code>post@forrebygg.no</code>). Adresse og org.nr er hentet fra offentlig foretaksregister. Skjemaet kobles til en tjeneste som Formspree ved lansering.</p>
+            <!-- Utvikler-notat (ikke synlig for besøkende): telefon og e-post over er plassholdere
+                 (+47 XXX XX XXX / post@forrebygg.no). Adresse og org.nr er hentet fra offentlig
+                 foretaksregister. Skjemaet kobles til en tjeneste som Formspree ved lansering. -->
           </aside>
         </div>
       </div>
@@ -390,7 +386,7 @@
         <div>
           <h4>Kontakt</h4>
           <address>
-            <a href="tel:+47XXXXXXXX" data-placeholder>+47 XXX XX XXX</a>
+            <span data-placeholder>+47 XXX XX XXX</span>
             <a href="mailto:post@forrebygg.no" data-placeholder>post@forrebygg.no</a>
             <span>Lyngvegen 7C, 5563 Førresfjorden</span>
             <span>Org.nr 929 226 208</span>
