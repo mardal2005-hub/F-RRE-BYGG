@@ -361,6 +361,14 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
   .topline span:last-child{display:none}
   .masthead{padding:18px 0 14px}
   .masthead__sub{letter-spacing:.16em;font-size:9px}
+  /* Hero-boks: mindre og plassert lenger ned på mobil */
+  .hero{align-items:flex-end}
+  .hero__inner{padding-bottom:clamp(28px,9vw,54px)}
+  .hero__card{padding:22px 22px 24px}
+  .hero__card-eyebrow{margin-bottom:10px}
+  .hero__card h2{font-size:23px}
+  .hero__card p{font-size:14.5px;margin:10px 0 20px}
+  .hero__card .btn{padding:15px 22px}
   .stats{grid-template-columns:1fr 1fr}
   .stat:nth-child(2){border-right:0}
   .stat{border-bottom:1px solid var(--line);padding-right:0;padding-left:20px}
