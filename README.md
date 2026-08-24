@@ -1,6 +1,6 @@
 # Førre Bygg – nettside
 
-Moderne, konverteringsrettet nettside for **Førre Bygg** – byggmester i Tysvær på
+Moderne, konverteringsrettet nettside for **Førre Bygg** – byggefirma i Tysvær på
 Haugalandet. Oppføring, oppgradering og utbedring av bolig, hytte og garasje.
 
 Bygget som en rask, statisk side (HTML, CSS og litt JavaScript) uten rammeverk eller
