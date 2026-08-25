@@ -121,7 +121,7 @@
         var tlf = encodeURIComponent((form.telefon.value || '').trim());
         var melding = encodeURIComponent((form.melding.value || '').trim());
         var body = 'Navn: ' + navn + '%0D%0AE-post: ' + epost + '%0D%0ATelefon: ' + tlf + '%0D%0A%0D%0A' + melding;
-        window.location.href = 'mailto:post@forrebygg.no?subject=' + encodeURIComponent('Forespørsel fra nettside – ' + decodeURIComponent(navn)) + '&body=' + body;
+        window.location.href = 'mailto:Forrebygg@outlook.com?subject=' + encodeURIComponent('Forespørsel fra nettside – ' + decodeURIComponent(navn)) + '&body=' + body;
         if (status) { status.textContent = 'Åpner e-postprogrammet ditt …'; status.className = 'form-status ok'; }
         return;
       }

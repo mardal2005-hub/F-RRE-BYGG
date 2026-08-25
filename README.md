@@ -43,7 +43,7 @@ python3 -m http.server 8000
 | **Hero-foto** | `assets/img/hero-photo.webp` (allerede lagt inn) | fallback: `assets/img/hero.svg` |
 | **Prosjektbilder** | legg filer i `assets/img/projects/` med navnene i `index.html` (`bolig-1.jpg`, `oppussing-1.jpg`, `tilbygg-1.jpg`, `andre-1.jpg`, `bolig-2.jpg`, `oppussing-2.jpg`) | fallback: `assets/img/ph-*.svg` |
 | **Om oss-bilde** | `assets/img/about.jpg` | fallback: `assets/img/about.svg` |
-| **Telefon / e-post** | søk etter `data-placeholder` i `index.html` | `+47 XXX XX XXX` / `post@forrebygg.no` |
+| **Telefon / e-post** | søk etter `data-placeholder` i `index.html` | `+47 XXX XX XXX` / `Forrebygg@outlook.com` |
 
 Alle bilder har `onerror`-fallback til en plassholder, så siden ser aldri «tom» ut før
 ekte foto er på plass. Prosjektbildene byttes inn uten å endre oppsettet.
