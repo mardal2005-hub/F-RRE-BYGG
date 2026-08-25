@@ -294,6 +294,11 @@ a.svc{text-decoration:none;color:inherit}
 .project__body p{color:rgba(255,255,255,.82);font-size:14.5px;margin-top:6px;max-width:44ch;opacity:0;max-height:0;transition:.45s var(--ease);overflow:hidden}
 .project:hover .project__body p{opacity:1;max-height:120px}
 .project.is-hidden{display:none}
+/* Touch-enheter har ingen hover – vis prosjektskildring og tittel-løft alltid */
+@media (hover:none){
+  .project__body{transform:none}
+  .project__body p{opacity:1;max-height:120px}
+}
 
 /* ---------- Prosess ---------- */
 .process{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(20px,3vw,40px);margin-top:clamp(40px,5vw,60px);counter-reset:step}
@@ -470,11 +475,12 @@ a.svc{text-decoration:none;color:inherit}
     filter:saturate(1.08) contrast(1.035);
   }
 }
+@media (prefers-reduced-motion: reduce){
   *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
   .reveal{opacity:1;transform:none}
   /* Ikke spill av hero-video ved redusert bevegelse – vis poster (deres eget foto) */
   .hero__video{display:none}
-  .hero__media{background-image:url("../img/hero-poster.jpg")}
+  .hero__media{background-image:url("../assets/img/hero-poster.jpg")}
 }
 
 /* ============ Konvertering: tillit + flytende CTA ============ */

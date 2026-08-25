@@ -138,6 +138,20 @@
     });
   });
 
+  /* ---- Google Analytics: registrer innsendt henvendelse som lead ---- */
+  function trackLead(method) {
+    try {
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'generate_lead', {
+          currency: 'NOK',
+          value: 0,
+          method: method || 'contact_form',
+          language: (doc.documentElement.getAttribute('lang') || '')
+        });
+      }
+    } catch (e) {}
+  }
+
   /* ---- Kontaktskjema ---- */
   var form = doc.getElementById('contactForm');
   var status = doc.getElementById('formStatus');
@@ -155,6 +169,7 @@
         var body = T.lblName + navn + '%0D%0A' + T.lblEmail + epost + '%0D%0A' + T.lblPhone + tlf + '%0D%0A%0D%0A' + melding;
         window.location.href = 'mailto:Forrebygg@outlook.com?subject=' + encodeURIComponent(T.subject + decodeURIComponent(navn)) + '&body=' + body;
         if (status) { status.textContent = T.mailOpen; status.className = 'form-status ok'; }
+        trackLead('email');
         return;
       }
       // Ekte Formspree-endepunkt → send i bakgrunnen
@@ -165,6 +180,7 @@
           if (r.ok) {
             form.reset();
             if (status) { status.textContent = T.thanks; status.className = 'form-status ok'; }
+            trackLead('contact_form');
           } else { throw new Error('feil'); }
         })
         .catch(function () {

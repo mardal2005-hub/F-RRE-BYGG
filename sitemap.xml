@@ -1,9 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://forrebygg.no/</loc>
-    <lastmod>2026-08-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://forrebygg.no/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://forrebygg.no/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://forrebygg.no/"/>
+    <lastmod>2026-08-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://forrebygg.no/tjeneste-nybygg.html</loc>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://forrebygg.no/tjeneste-nybygg.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://forrebygg.no/en/tjeneste-nybygg.html"/>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://forrebygg.no/tjeneste-oppussing.html</loc>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://forrebygg.no/tjeneste-oppussing.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://forrebygg.no/en/tjeneste-oppussing.html"/>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://forrebygg.no/tjeneste-tilbygg.html</loc>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://forrebygg.no/tjeneste-tilbygg.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://forrebygg.no/en/tjeneste-tilbygg.html"/>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://forrebygg.no/tjeneste-garasje.html</loc>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://forrebygg.no/tjeneste-garasje.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://forrebygg.no/en/tjeneste-garasje.html"/>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://forrebygg.no/tjeneste-hytte.html</loc>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://forrebygg.no/tjeneste-hytte.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://forrebygg.no/en/tjeneste-hytte.html"/>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://forrebygg.no/tjeneste-utvendig.html</loc>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://forrebygg.no/tjeneste-utvendig.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://forrebygg.no/en/tjeneste-utvendig.html"/>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://forrebygg.no/en/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://forrebygg.no/en/"/>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://forrebygg.no/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://forrebygg.no/"/>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://forrebygg.no/en/tjeneste-nybygg.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://forrebygg.no/en/tjeneste-nybygg.html"/>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://forrebygg.no/tjeneste-nybygg.html"/>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://forrebygg.no/en/tjeneste-oppussing.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://forrebygg.no/en/tjeneste-oppussing.html"/>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://forrebygg.no/tjeneste-oppussing.html"/>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://forrebygg.no/en/tjeneste-tilbygg.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://forrebygg.no/en/tjeneste-tilbygg.html"/>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://forrebygg.no/tjeneste-tilbygg.html"/>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://forrebygg.no/en/tjeneste-garasje.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://forrebygg.no/en/tjeneste-garasje.html"/>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://forrebygg.no/tjeneste-garasje.html"/>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://forrebygg.no/en/tjeneste-hytte.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://forrebygg.no/en/tjeneste-hytte.html"/>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://forrebygg.no/tjeneste-hytte.html"/>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://forrebygg.no/en/tjeneste-utvendig.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://forrebygg.no/en/tjeneste-utvendig.html"/>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://forrebygg.no/tjeneste-utvendig.html"/>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
