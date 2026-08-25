@@ -4,6 +4,24 @@
   'use strict';
   var doc = document;
 
+  /* ---- Språk: velg tekster ut fra <html lang> ---- */
+  var isEn = (doc.documentElement.getAttribute('lang') || '').toLowerCase().indexOf('en') === 0;
+  var T = isEn ? {
+    mailOpen: 'Opening your email app …',
+    sending: 'Sending …',
+    thanks: 'Thank you! We’ll be in touch as soon as we can.',
+    error: 'Something went wrong. Please call us, or try again.',
+    lblName: 'Name: ', lblEmail: 'Email: ', lblPhone: 'Phone: ',
+    subject: 'Enquiry from website – '
+  } : {
+    mailOpen: 'Åpner e-postprogrammet ditt …',
+    sending: 'Sender …',
+    thanks: 'Takk! Vi tar kontakt så snart vi kan.',
+    error: 'Noe gikk galt. Ring oss gjerne, eller prøv igjen.',
+    lblName: 'Navn: ', lblEmail: 'E-post: ', lblPhone: 'Telefon: ',
+    subject: 'Forespørsel fra nettside – '
+  };
+
   /* ---- År i footer ---- */
   var yr = doc.getElementById('year');
   if (yr) yr.textContent = new Date().getFullYear();
@@ -134,23 +152,23 @@
         var epost = encodeURIComponent((form.epost.value || '').trim());
         var tlf = encodeURIComponent((form.telefon.value || '').trim());
         var melding = encodeURIComponent((form.melding.value || '').trim());
-        var body = 'Navn: ' + navn + '%0D%0AE-post: ' + epost + '%0D%0ATelefon: ' + tlf + '%0D%0A%0D%0A' + melding;
-        window.location.href = 'mailto:Forrebygg@outlook.com?subject=' + encodeURIComponent('Forespørsel fra nettside – ' + decodeURIComponent(navn)) + '&body=' + body;
-        if (status) { status.textContent = 'Åpner e-postprogrammet ditt …'; status.className = 'form-status ok'; }
+        var body = T.lblName + navn + '%0D%0A' + T.lblEmail + epost + '%0D%0A' + T.lblPhone + tlf + '%0D%0A%0D%0A' + melding;
+        window.location.href = 'mailto:Forrebygg@outlook.com?subject=' + encodeURIComponent(T.subject + decodeURIComponent(navn)) + '&body=' + body;
+        if (status) { status.textContent = T.mailOpen; status.className = 'form-status ok'; }
         return;
       }
       // Ekte Formspree-endepunkt → send i bakgrunnen
       e.preventDefault();
-      if (status) { status.textContent = 'Sender …'; status.className = 'form-status'; }
+      if (status) { status.textContent = T.sending; status.className = 'form-status'; }
       fetch(action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
         .then(function (r) {
           if (r.ok) {
             form.reset();
-            if (status) { status.textContent = 'Takk! Vi tar kontakt så snart vi kan.'; status.className = 'form-status ok'; }
+            if (status) { status.textContent = T.thanks; status.className = 'form-status ok'; }
           } else { throw new Error('feil'); }
         })
         .catch(function () {
-          if (status) { status.textContent = 'Noe gikk galt. Ring oss gjerne, eller prøv igjen.'; status.className = 'form-status err'; }
+          if (status) { status.textContent = T.error; status.className = 'form-status err'; }
         });
     });
   }
