@@ -115,4 +115,20 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://forrebygg.no/bilder.html</loc>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://forrebygg.no/bilder.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://forrebygg.no/en/bilder.html"/>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://forrebygg.no/en/bilder.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://forrebygg.no/en/bilder.html"/>
+    <xhtml:link rel="alternate" hreflang="nb" href="https://forrebygg.no/bilder.html"/>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>
