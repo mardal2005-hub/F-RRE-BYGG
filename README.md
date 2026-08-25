@@ -50,9 +50,12 @@ ekte foto er på plass. Prosjektbildene byttes inn uten å endre oppsettet.
 
 ### Kontaktskjema
 
-Skjemaet fungerer ut av boksen: uten en skjematjeneste åpner det kundens e-postprogram
-med en ferdig utfylt melding. For å motta forespørsler automatisk, opprett et skjema hos
-[Formspree](https://formspree.io) og bytt ut `your-form-id` i `action` på `#contactForm`.
+Skjemaet sender forespørsler via [FormSubmit](https://formsubmit.co) – ingen konto kreves.
+`action` på `#contactForm` peker på hovedmottakerens e-post, og `_cc` sender en kopi til
+firmaet (`Forrebygg@outlook.com`). Første gang skjemaet brukes, sender FormSubmit en
+aktiverings-e-post til hovedmottakeren som må bekreftes med ett klikk – deretter går alt
+automatisk. Bytt gjerne til FormSubmit sin maskerte endepunkt-URL etter aktivering, så
+ligger ikke e-postadressen synlig i kildekoden.
 
 ## Bekreftet informasjon
 
