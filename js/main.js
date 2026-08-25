@@ -38,6 +38,20 @@
     mark();
   }
 
+  /* ---- Logo/«Førre Bygg» → rull til toppen på forsiden ----
+     Headeren er sticky, så nettleseren tror #hjem alltid er i visning og
+     hopper ikke. Vi ruller derfor manuelt til toppen. */
+  if (doc.getElementById('hjem')) {
+    [].slice.call(doc.querySelectorAll('a[href="#hjem"]')).forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        closeMenu();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (history.replaceState) history.replaceState(null, '', location.pathname + location.search);
+      });
+    });
+  }
+
   /* ---- CTA → hopp til skjema og sett fokus på første felt ---- */
   var navnField = doc.getElementById('navn');
   function focusForm() {
