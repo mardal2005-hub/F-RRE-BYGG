@@ -31,7 +31,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..500&family=Inter:wght@400;500;600;700&display=swap">
 
-  <link rel="stylesheet" href="css/styles.css?v=28">
+  <link rel="stylesheet" href="css/styles.css?v=29">
 
   <!-- Structured data: lokalt byggefirma -->
   <script type="application/ld+json">
@@ -72,7 +72,17 @@
     <div class="masthead">
       <div class="container masthead__row">
         <nav class="mast-nav mast-nav--left" aria-label="Meny venstre">
-          <a href="#tjenester">Tjenester</a>
+          <div class="mast-drop">
+            <a href="#tjenester" aria-haspopup="true">Tjenester</a>
+            <div class="mast-drop__menu" role="menu">
+              <a href="tjeneste-nybygg.html">Nybygg</a>
+              <a href="tjeneste-oppussing.html">Oppussing</a>
+              <a href="tjeneste-tilbygg.html">Tilbygg</a>
+              <a href="tjeneste-garasje.html">Garasje</a>
+              <a href="tjeneste-hytte.html">Hytte</a>
+              <a href="tjeneste-utvendig.html">Utvendig arbeid</a>
+            </div>
+          </div>
           <a href="#referanser">Referanser</a>
         </nav>
 
