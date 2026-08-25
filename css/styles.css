@@ -254,6 +254,9 @@ a.svc{text-decoration:none;color:inherit}
 .svc__num{display:none}
 .svc__icon{width:58px;height:58px;margin:0 0 24px;display:grid;place-items:center;background:var(--sand-tint);color:var(--sand-deep)}
 .svc__icon svg{width:30px;height:30px;stroke-width:1.6}
+.svc__media{margin:calc(-1 * clamp(30px,2.6vw,40px));margin-bottom:24px;aspect-ratio:16/10;overflow:hidden;background:var(--paper-3)}
+.svc__media img{width:100%;height:100%;object-fit:cover;transition:transform .55s var(--ease)}
+.svc:hover .svc__media img{transform:scale(1.05)}
 .svc h3{font-size:24px;margin-bottom:11px}
 .svc p{color:var(--muted);font-size:15.5px}
 
