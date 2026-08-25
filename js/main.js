@@ -38,6 +38,46 @@
     mark();
   }
 
+  /* ---- CTA → hopp til skjema og sett fokus på første felt ---- */
+  var navnField = doc.getElementById('navn');
+  function focusForm() {
+    if (!navnField) return;
+    // vent til smooth-scroll er i gang, så feltet ikke «rykker» siden
+    setTimeout(function () {
+      try { navnField.focus({ preventScroll: true }); } catch (e) { navnField.focus(); }
+    }, 500);
+  }
+  [].slice.call(doc.querySelectorAll('a[href$="#kontakt"], a[href="#kontakt"]')).forEach(function (a) {
+    a.addEventListener('click', function () {
+      // kun når vi allerede er på forsiden (samme dokument)
+      if (doc.getElementById('kontakt')) focusForm();
+    });
+  });
+  // ankomst direkte via #kontakt i URL
+  if (window.location.hash === '#kontakt') focusForm();
+
+  /* ---- Flytende «Be om tilbud»-knapp ---- */
+  var floatCta = doc.getElementById('ctaFloat');
+  var hero = doc.querySelector('.hero');
+  var kontakt = doc.getElementById('kontakt');
+  if (floatCta && 'IntersectionObserver' in window) {
+    var pastHero = false, atForm = false;
+    var sync = function () {
+      floatCta.classList.toggle('is-visible', pastHero && !atForm);
+    };
+    if (hero) {
+      new IntersectionObserver(function (e) {
+        pastHero = !e[0].isIntersecting; sync();
+      }, { threshold: 0 }).observe(hero);
+    } else { pastHero = true; }
+    if (kontakt) {
+      new IntersectionObserver(function (e) {
+        atForm = e[0].isIntersecting; sync();
+      }, { threshold: 0 }).observe(kontakt);
+    }
+    sync();
+  }
+
   /* ---- Scroll-reveal ---- */
   var reveals = [].slice.call(doc.querySelectorAll('.reveal:not(.is-in)'));
   if ('IntersectionObserver' in window && reveals.length) {

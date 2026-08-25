@@ -468,3 +468,43 @@ a.svc{text-decoration:none;color:inherit}
   .hero__video{display:none}
   .hero__media{background-image:url("../img/hero-poster.jpg")}
 }
+
+/* ============ Konvertering: tillit + flytende CTA ============ */
+.trust-row{
+  list-style:none;display:flex;flex-wrap:wrap;gap:10px 22px;
+  margin:22px 0 0;padding:0;
+}
+.trust-row li{
+  display:inline-flex;align-items:center;gap:8px;
+  font:600 14px var(--sans);color:var(--ink);
+}
+.trust-row svg{width:18px;height:18px;stroke:var(--sand-deep);stroke-width:2.4;flex:none}
+
+.field label .opt{
+  text-transform:none;letter-spacing:0;font-weight:500;color:var(--muted-2);
+}
+.form-alt{font-size:14.5px;color:var(--muted);margin-top:2px}
+.form-alt a{color:var(--ink);font-weight:600;border-bottom:1px solid var(--line);white-space:nowrap}
+.form-alt a:hover{border-color:var(--ink)}
+
+/* Flytende «Be om tilbud» – vises etter hero, skjules når skjemaet er synlig */
+.cta-float{
+  position:fixed;right:20px;bottom:20px;z-index:90;
+  display:inline-flex;align-items:center;gap:9px;
+  padding:14px 20px;border-radius:999px;
+  background:var(--ink);color:var(--cream);
+  font:600 15px var(--sans);letter-spacing:.01em;text-decoration:none;
+  box-shadow:0 14px 34px -10px rgba(22,22,25,.55);
+  opacity:0;visibility:hidden;transform:translateY(14px);
+  transition:opacity .3s ease,transform .3s ease,visibility .3s;
+}
+.cta-float.is-visible{opacity:1;visibility:visible;transform:translateY(0)}
+.cta-float:hover{background:var(--ink-2)}
+.cta-float svg{width:19px;height:19px;flex:none}
+@media (max-width:560px){
+  .cta-float{right:14px;bottom:14px;padding:13px 18px;font-size:14.5px}
+}
+@media (prefers-reduced-motion:reduce){
+  .cta-float{transition:opacity .2s ease}
+  .cta-float:not(.is-visible){transform:none}
+}
