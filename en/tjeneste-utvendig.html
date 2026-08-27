@@ -7,6 +7,8 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
+    gtag('consent', 'default', { 'analytics_storage': 'denied' });
+    try { if (localStorage.getItem('ffb-consent') === 'accepted') gtag('consent', 'update', { 'analytics_storage': 'granted' }); } catch (e) {}
 
     gtag('config', 'G-S9E1C4F57K');
   </script>
@@ -23,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..500&family=Inter:wght@400;500;600;700&display=swap">
-  <link rel="stylesheet" href="../css/styles.css?v=33">
+  <link rel="stylesheet" href="../css/styles.css?v=34">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -196,6 +198,6 @@
     </div>
   </footer>
 
-  <script src="../js/main.js?v=9" defer></script>
+  <script src="../js/main.js?v=10" defer></script>
 </body>
 </html>

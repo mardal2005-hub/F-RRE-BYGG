@@ -548,3 +548,14 @@ body.lb-open{overflow:hidden}
 .lightbox__prev{left:clamp(10px,2vw,26px);top:50%;transform:translateY(-50%)}
 .lightbox__next{right:clamp(10px,2vw,26px);top:50%;transform:translateY(-50%)}
 @media(max-width:600px){.lightbox__prev{left:8px}.lightbox__next{right:8px}.lightbox__btn{width:44px;height:44px}}
+
+/* ============ Cookie-samtykke ============ */
+.cookie{position:fixed;left:20px;bottom:20px;z-index:150;max-width:380px;background:var(--paper);border:1px solid var(--line);box-shadow:0 24px 60px -24px rgba(23,20,15,.5);padding:22px 22px 20px;transform:translateY(150%);transition:transform .4s var(--ease)}
+.cookie.is-in{transform:none}
+.cookie p{font-size:14px;color:var(--muted);line-height:1.55;margin:0 0 16px}
+.cookie__row{display:flex;gap:10px}
+.cookie__row .btn{flex:1;padding:13px 16px;font-size:11px}
+@media(max-width:560px){.cookie{left:12px;right:12px;bottom:12px;max-width:none}}
+@media (prefers-reduced-motion:reduce){.cookie{transition:none}}
+.footer__bottom .cookie-link{color:var(--cream);opacity:.85;text-decoration:underline;cursor:pointer}
+.footer__bottom .cookie-link:hover{opacity:1;color:#fff}

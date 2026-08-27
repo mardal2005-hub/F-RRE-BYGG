@@ -220,4 +220,56 @@
       else if (e.key === 'ArrowRight') lbGo(1);
     });
   }
+
+  /* ---- Cookie-samtykke (GDPR / Consent Mode) ---- */
+  var CC_KEY = 'ffb-consent';
+  var ccT = isEn ? {
+    text: 'We use cookies for anonymous statistics about how the website is used. Analytics is only activated if you accept.',
+    accept: 'Accept', decline: 'Decline', settings: 'Cookies', label: 'Cookie consent'
+  } : {
+    text: 'Vi bruker informasjonskapsler til anonym statistikk om hvordan nettsiden brukes. Statistikk aktiveres kun hvis du godtar.',
+    accept: 'Godta', decline: 'Avslå', settings: 'Informasjonskapsler', label: 'Samtykke til informasjonskapsler'
+  };
+  function ccSet(val) {
+    try { localStorage.setItem(CC_KEY, val); } catch (e) {}
+    if (typeof window.gtag === 'function') {
+      window.gtag('consent', 'update', { 'analytics_storage': val === 'accepted' ? 'granted' : 'denied' });
+    }
+  }
+  function ccBuild() {
+    if (doc.querySelector('.cookie')) return;
+    var d = doc.createElement('div');
+    d.className = 'cookie';
+    d.setAttribute('role', 'dialog');
+    d.setAttribute('aria-label', ccT.label);
+    d.innerHTML = '<p>' + ccT.text + '</p><div class="cookie__row">' +
+      '<button class="btn btn--ghost" type="button" data-cc="decline">' + ccT.decline + '</button>' +
+      '<button class="btn btn--ink" type="button" data-cc="accept">' + ccT.accept + '</button></div>';
+    doc.body.appendChild(d);
+    requestAnimationFrame(function () { d.classList.add('is-in'); });
+    d.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-cc]');
+      if (!b) return;
+      ccSet(b.getAttribute('data-cc') === 'accept' ? 'accepted' : 'declined');
+      d.classList.remove('is-in');
+      setTimeout(function () { if (d.parentNode) d.parentNode.removeChild(d); }, 400);
+    });
+  }
+  var ccStored;
+  try { ccStored = localStorage.getItem(CC_KEY); } catch (e) {}
+  if (ccStored !== 'accepted' && ccStored !== 'declined') ccBuild();
+  // Footer-lenke for å endre samtykke senere
+  var ccFooter = doc.querySelector('.footer__bottom');
+  if (ccFooter) {
+    var ccLink = doc.createElement('a');
+    ccLink.href = '#';
+    ccLink.className = 'cookie-link';
+    ccLink.textContent = ccT.settings;
+    ccLink.addEventListener('click', function (e) {
+      e.preventDefault();
+      try { localStorage.removeItem(CC_KEY); } catch (err) {}
+      ccBuild();
+    });
+    ccFooter.appendChild(ccLink);
+  }
 })();
