@@ -221,8 +221,23 @@
     });
   }
 
-  /* ---- Cookie-samtykke (GDPR / Consent Mode) ---- */
+  /* ---- Cookie-samtykke (GDPR): Google Analytics lastes KUN etter aktivt samtykke ---- */
   var CC_KEY = 'ffb-consent';
+  var GA_ID = 'G-S9E1C4F57K';
+  var gaLoaded = false;
+  function loadGA() {
+    if (gaLoaded) return;
+    gaLoaded = true;
+    var s = doc.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    doc.head.appendChild(s);
+    if (typeof window.gtag === 'function') {
+      window.gtag('js', new Date());
+      window.gtag('consent', 'update', { 'analytics_storage': 'granted' });
+      window.gtag('config', GA_ID);
+    }
+  }
   var ccT = isEn ? {
     text: 'We use cookies for anonymous statistics about how the website is used. Analytics is only activated if you accept.',
     accept: 'Accept', decline: 'Decline', settings: 'Cookies', label: 'Cookie consent'
@@ -232,8 +247,10 @@
   };
   function ccSet(val) {
     try { localStorage.setItem(CC_KEY, val); } catch (e) {}
-    if (typeof window.gtag === 'function') {
-      window.gtag('consent', 'update', { 'analytics_storage': val === 'accepted' ? 'granted' : 'denied' });
+    if (val === 'accepted') {
+      loadGA();
+    } else if (typeof window.gtag === 'function') {
+      window.gtag('consent', 'update', { 'analytics_storage': 'denied' });
     }
   }
   function ccBuild() {
@@ -257,7 +274,8 @@
   }
   var ccStored;
   try { ccStored = localStorage.getItem(CC_KEY); } catch (e) {}
-  if (ccStored !== 'accepted' && ccStored !== 'declined') ccBuild();
+  if (ccStored === 'accepted') loadGA();
+  else if (ccStored !== 'declined') ccBuild();
   // Footer-lenke for å endre samtykke senere
   var ccFooter = doc.querySelector('.footer__bottom');
   if (ccFooter) {
