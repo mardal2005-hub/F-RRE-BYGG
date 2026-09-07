@@ -138,6 +138,29 @@
     });
   });
 
+  /* ---- Hero-video: pause/spill (WCAG 2.2.2) ---- */
+  var heroPause = doc.getElementById('heroPause');
+  var heroVid = doc.querySelector('.hero__video');
+  if (heroPause && heroVid) {
+    var pIcon = heroPause.querySelector('.hero__pause-pause');
+    var plIcon = heroPause.querySelector('.hero__pause-play');
+    var lblPause = isEn ? 'Pause background video' : 'Pause bakgrunnsvideo';
+    var lblPlay = isEn ? 'Play background video' : 'Spill bakgrunnsvideo';
+    function syncPauseBtn() {
+      var paused = heroVid.paused;
+      if (pIcon) pIcon.hidden = paused;
+      if (plIcon) plIcon.hidden = !paused;
+      heroPause.setAttribute('aria-label', paused ? lblPlay : lblPause);
+    }
+    heroPause.addEventListener('click', function () {
+      if (heroVid.paused) { heroVid.play(); } else { heroVid.pause(); }
+      syncPauseBtn();
+    });
+    heroVid.addEventListener('play', syncPauseBtn);
+    heroVid.addEventListener('pause', syncPauseBtn);
+    syncPauseBtn();
+  }
+
   /* ---- Google Analytics: registrer innsendt henvendelse som lead ---- */
   function trackLead(method) {
     try {

@@ -168,6 +168,12 @@ body.nav-open .nav-toggle span::after{transform:translateY(-6px) rotate(-45deg)}
   linear-gradient(180deg,rgba(15,17,20,.22) 0%,rgba(15,17,20,0) 45%,rgba(15,17,20,.5) 100%);}
 .hero__inner{position:relative;z-index:2;width:100%;padding-block:clamp(40px,7vw,84px);display:flex;align-items:center;justify-content:space-between;gap:clamp(28px,5vw,72px)}
 .hero .container{padding-left:clamp(16px,2.5vw,40px);padding-right:clamp(24px,5vw,72px)}
+/* Pause/spill-knapp for hero-video (WCAG 2.2.2) */
+.hero__pause{position:absolute;top:16px;right:clamp(16px,2.5vw,40px);z-index:4;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:rgba(15,17,20,.45);border:1px solid rgba(255,255,255,.4);color:#fff;cursor:pointer;transition:background .2s var(--ease),transform .2s var(--ease)}
+.hero__pause:hover{background:rgba(15,17,20,.72)}
+.hero__pause:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.hero__pause svg{width:16px;height:16px}
+@media (prefers-reduced-motion:reduce){.hero__pause{display:none}}
 /* H1 + underlinje til venstre over fotoet */
 .hero__intro{max-width:540px;flex:1 1 auto}
 .hero__intro h1{font-family:var(--serif);color:#fff;font-weight:500;font-size:clamp(36px,4.8vw,66px);line-height:1.04;letter-spacing:-.015em;text-shadow:0 3px 34px rgba(0,0,0,.42)}
