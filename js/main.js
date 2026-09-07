@@ -240,10 +240,10 @@
   }
   var ccT = isEn ? {
     text: 'We use cookies for anonymous statistics about how the website is used. Analytics is only activated if you accept.',
-    accept: 'Accept', decline: 'Decline', settings: 'Cookies', label: 'Cookie consent'
+    accept: 'Accept', decline: 'Decline', settings: 'Cookies', label: 'Cookie consent', more: 'Privacy policy'
   } : {
     text: 'Vi bruker informasjonskapsler til anonym statistikk om hvordan nettsiden brukes. Statistikk aktiveres kun hvis du godtar.',
-    accept: 'Godta', decline: 'Avslå', settings: 'Informasjonskapsler', label: 'Samtykke til informasjonskapsler'
+    accept: 'Godta', decline: 'Avslå', settings: 'Informasjonskapsler', label: 'Samtykke til informasjonskapsler', more: 'Personvern'
   };
   function ccSet(val) {
     try { localStorage.setItem(CC_KEY, val); } catch (e) {}
@@ -259,7 +259,7 @@
     d.className = 'cookie';
     d.setAttribute('role', 'dialog');
     d.setAttribute('aria-label', ccT.label);
-    d.innerHTML = '<p>' + ccT.text + '</p><div class="cookie__row">' +
+    d.innerHTML = '<p>' + ccT.text + ' <a href="personvern.html">' + ccT.more + '</a></p><div class="cookie__row">' +
       '<button class="btn btn--ghost" type="button" data-cc="decline">' + ccT.decline + '</button>' +
       '<button class="btn btn--ink" type="button" data-cc="accept">' + ccT.accept + '</button></div>';
     doc.body.appendChild(d);

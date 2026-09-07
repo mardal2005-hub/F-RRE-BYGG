@@ -553,6 +553,8 @@ body.lb-open{overflow:hidden}
 .cookie{position:fixed;left:20px;bottom:20px;z-index:150;max-width:380px;background:var(--paper);border:1px solid var(--line);box-shadow:0 24px 60px -24px rgba(23,20,15,.5);padding:22px 22px 20px;transform:translateY(150%);transition:transform .4s var(--ease)}
 .cookie.is-in{transform:none}
 .cookie p{font-size:14px;color:var(--muted);line-height:1.55;margin:0 0 16px}
+.cookie a{color:var(--ink);text-decoration:underline}
+.cookie a:hover{color:var(--sand-deep)}
 .cookie__row{display:flex;gap:10px}
 .cookie__row .btn{flex:1;padding:13px 16px;font-size:11px}
 @media(max-width:560px){.cookie{left:12px;right:12px;bottom:12px;max-width:none}}
