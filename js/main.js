@@ -263,7 +263,9 @@
       '<button class="btn btn--ghost" type="button" data-cc="decline">' + ccT.decline + '</button>' +
       '<button class="btn btn--ink" type="button" data-cc="accept">' + ccT.accept + '</button></div>';
     doc.body.appendChild(d);
+    // Vis banneret: rAF når siden tegner, med setTimeout som fallback (rAF kan være strupt)
     requestAnimationFrame(function () { d.classList.add('is-in'); });
+    setTimeout(function () { d.classList.add('is-in'); }, 80);
     d.addEventListener('click', function (e) {
       var b = e.target.closest('[data-cc]');
       if (!b) return;
@@ -279,12 +281,11 @@
   // Footer-lenke for å endre samtykke senere
   var ccFooter = doc.querySelector('.footer__bottom');
   if (ccFooter) {
-    var ccLink = doc.createElement('a');
-    ccLink.href = '#';
+    var ccLink = doc.createElement('button');
+    ccLink.type = 'button';
     ccLink.className = 'cookie-link';
     ccLink.textContent = ccT.settings;
-    ccLink.addEventListener('click', function (e) {
-      e.preventDefault();
+    ccLink.addEventListener('click', function () {
       try { localStorage.removeItem(CC_KEY); } catch (err) {}
       ccBuild();
     });
