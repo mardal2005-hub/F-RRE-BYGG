@@ -179,24 +179,37 @@
   var form = doc.getElementById('contactForm');
   var status = doc.getElementById('formStatus');
   if (form) {
+    // Fallback: åpne e-postprogrammet med henvendelsen ferdig utfylt – sendt til
+    // begge adressene (Forrebygg@outlook.com + kopi til mardal2005@gmail.com).
+    // Brukes hvis skjematjenesten ikke er satt opp eller er utilgjengelig, slik
+    // at ingen henvendelse går tapt selv om tredjepartstjenesten svikter.
+    function sendViaMail(source) {
+      var navn = (form.navn.value || '').trim();
+      var epost = (form.epost.value || '').trim();
+      var tlf = (form.telefon.value || '').trim();
+      var melding = (form.melding.value || '').trim();
+      var body = T.lblName + navn + '\r\n' + T.lblEmail + epost + '\r\n' + T.lblPhone + tlf + '\r\n\r\n' + melding;
+      var url = 'mailto:Forrebygg@outlook.com'
+        + '?cc=' + encodeURIComponent('mardal2005@gmail.com')
+        + '&subject=' + encodeURIComponent(T.subject + navn)
+        + '&body=' + encodeURIComponent(body);
+      if (status) { status.textContent = T.mailOpen; status.className = 'form-status ok'; }
+      trackLead(source || 'email');
+      window.location.href = url;
+    }
+
     form.addEventListener('submit', function (e) {
       if (!form.checkValidity()) return; // la nettleseren vise feil
+      e.preventDefault();
       var action = form.getAttribute('action') || '';
-      // Ingen skjematjeneste satt opp ennå → fall tilbake til e-post
-      if (action.indexOf('your-form-id') !== -1) {
-        e.preventDefault();
-        var navn = encodeURIComponent((form.navn.value || '').trim());
-        var epost = encodeURIComponent((form.epost.value || '').trim());
-        var tlf = encodeURIComponent((form.telefon.value || '').trim());
-        var melding = encodeURIComponent((form.melding.value || '').trim());
-        var body = T.lblName + navn + '%0D%0A' + T.lblEmail + epost + '%0D%0A' + T.lblPhone + tlf + '%0D%0A%0D%0A' + melding;
-        window.location.href = 'mailto:Forrebygg@outlook.com?subject=' + encodeURIComponent(T.subject + decodeURIComponent(navn)) + '&body=' + body;
-        if (status) { status.textContent = T.mailOpen; status.className = 'form-status ok'; }
-        trackLead('email');
+
+      // Ingen skjematjeneste satt opp → åpne e-post direkte
+      if (!action || action.indexOf('your-form-id') !== -1) {
+        sendViaMail('email');
         return;
       }
-      // Ekte Formspree-endepunkt → send i bakgrunnen
-      e.preventDefault();
+
+      // Send via skjematjenesten i bakgrunnen …
       if (status) { status.textContent = T.sending; status.className = 'form-status'; }
       fetch(action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
         .then(function (r) {
@@ -207,7 +220,8 @@
           } else { throw new Error('feil'); }
         })
         .catch(function () {
-          if (status) { status.textContent = T.error; status.className = 'form-status err'; }
+          // … men hvis tjenesten svikter, fall tilbake til e-post så henvendelsen ikke går tapt.
+          sendViaMail('email_fallback');
         });
     });
   }
